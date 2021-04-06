@@ -1,0 +1,73 @@
+﻿@model SerieCRUD.Models.Serie
+
+<div class="row">
+    <div class="col-md-12 ">
+        <form asp-action="Upsert" asp-route-id="@Model.Id" onsubmit="return jQueryAjaxPost(this);" id="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model.Id != 0)
+            {
+                <input type="hidden" asp-for="Id" />
+            }
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group row justify-content-center">
+                <div class="col-3">
+                    <label asp-for="Titulo"> </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Titulo" class="form-control"> </>
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-3">
+                    <label asp-for="Genero"></label>
+                </div>
+                <div class="col-6">
+                    <select asp-for="Genero" class="form-control" id="FormControlSelect">
+                        <option>Ação</option>
+                        <option>Aventura</option>
+                        <option>Comédia</option>
+                        <option>Documentário </option>
+                        <option>Espionagem</option>
+                        <option>Faroeste</option>
+                        <option>Fantasia</option>
+                        <option>Ficção_Científica</option>
+                        <option>Musical</option>
+                        <option>Romance</option>
+                        <option>Suspense</option>
+                        <option>Terror</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-3">
+                    <label asp-for="Ano">Ano</label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Ano" value="2000" class="form-control" />
+                    <span asp-validation-for="Ano" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-3">
+                    <label asp-for="Descricao">Descrição</label>
+                </div>
+                <div class="col-6">
+                    <textarea class="form-control" asp-for="Descricao" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <div class="col-3 offset-3">
+                    <button type="submit" class="btn btn-success form-control ">
+                       @(Model.Id != 0 ? "Editar" : "Adicionar")
+                    </button>
+                </div>
+                <div class="col-3">
+                    <a asp-action="Index" class="btn btn-danger form-control">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

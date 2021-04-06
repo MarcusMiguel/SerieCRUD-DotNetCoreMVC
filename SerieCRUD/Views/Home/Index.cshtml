@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Shared/_Layout.cshtml";
+}
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-12 p-1">
+        @if (Model != null)
+        {
+            <div class="row" id="mydiv">
+                @foreach (var item in Model)
+                {
+                    <div class="col-12 col-md-6 col-lg-4 justify-content-center d-flex ">
+                        <div class="card">
+                            <img class="card-img-top" src="~/images/placeholder2.png" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Titulo (@item.Ano)   <span class="badge badge-secondary">@item.Genero</span></h5>
+                                <div id="module" class="container">
+                                    <div class="card-buttons">
+                                        <a onclick="deleteConfirmation(@item.Id)" class="btn btn-danger btn-sm b1 ">  <i class="delete fa fa-trash fa-2x"></i></a>
+                                        <a data-value="@item.Id" class="btn btn-success btn-sm text-white b2 btnModal"><i class="fa fa-edit fa-2x"></i></a>
+                                    </div>
+                                    @if (item.Descricao != null)
+                                    {
+                                        <p class="card-text ">@item.Descricao</p>
+                                    }
+                                    else
+                                    {
+                                        <div class="semdescricao">Sem descrição</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>Nenhuma série disponível.</p>
+        }
+    </div>
+    <a data-value="null" class="float btnModal ">
+        <i class="fa fa-plus my-float "></i>
+    </a>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body ">
+                <div id="teste"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

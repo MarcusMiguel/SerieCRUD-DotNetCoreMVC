@@ -1,0 +1,19 @@
+﻿@model SerieCRUD.Models.Serie
+<br />
+<h2 class="text-info">Detalhes da Série</h2>
+<br />
+
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 22rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                @Model.Titulo - @Model.Ano
+                <span class="badge badge-secondary">@Model.Genero</span>
+            </h5>
+            <p class="card-text">@Model.Descricao</p>
+            <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+
+        </div>
+    </div>
+
+</div>

@@ -9,7 +9,7 @@ using SerieCRUD.Models;
 namespace SerieCRUD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210403143351_init")]
+    [Migration("20210412203232_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

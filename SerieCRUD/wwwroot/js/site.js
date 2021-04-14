@@ -1,11 +1,10 @@
 ﻿function deleteConfirmation(id) {
     swal({
         title: "Tem certeza?",
-        html: $('<a asp-action="Delete" asp-route-id="@item.Id"  class="btn btn-danger btn-sm b1">  <i class="fa fa-trash fa-2x"></i></a>'),
         type: "warning",
         showCancelButton: true,
         confirmButtonClass: "btn-danger",
-        confirmButtonText: "Sim",
+        confirmButtonText: "Deletar",
         cancelButtonText: "Cancelar",        
     },
     function(willDelete){

@@ -1,7 +1,7 @@
 
 # Aplicação CRUD
 ***
-![Alt text](/SerieCRUD/wwwroot/images/Screenshot_10.png?raw=true)
+![](/SerieCRUD/wwwroot/images/CRUDgif.gif)
 ***
 ## Setup
      git clone https://github.com/MarcusMiguel/SerieCRUD-DotNetCoreMVC.git
